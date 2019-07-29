@@ -21,7 +21,13 @@ after_success:
   - docker push shafik/complex-server
   - docker push shafik/complex-worker
 
-# deploy:
+deploy:
+  provider: heroku
+  api_key:
+    secure: "$heruko_api"
+  on:
+    branch: master
+
 #   provider: elasticbeanstalk
 #   region: us-west-1
 #   app: multi-docker
